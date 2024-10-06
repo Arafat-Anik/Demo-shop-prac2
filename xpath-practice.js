@@ -26,8 +26,15 @@ async function testRun()
    // await driver.findElement(By.xpath("//span[contains(text(),'ADD TO CART')]")).click(); // we can select by text
     await driver.sleep(2000); // Wait for View cart Action
     await driver.findElement(By.xpath("//a[@class='add-cart-popup-button']")).click(); 
+    await driver.sleep(2000);
+    await driver.findElement(By.xpath("//a[contains(.,'CHECKOUT')]")).click(); 
+  //  await driver.findElement(By.xpath("//input[@name ='email']")).clear(); 
+  //  await driver.findElement(By.xpath("//input[@name ='email']")).click(); 
+    await driver.findElement(By.xpath("//input[@placeholder='Email']")).click(); 
+    await driver.findElement(By.xpath("//input[@placeholder='Email']")).sendKeys("arafat@gmail.com"); 
+    await driver.findElement(By.xpath("//button[contains(.,'Continue to shipping')]")).click(); 
 
-    await driver.sleep(3000); // 3 Sec wait
+    await driver.sleep(5000); // 3 Sec wait
     await driver.quit();
 }
 
