@@ -1,0 +1,15 @@
+{
+  "name": "javascript-code",
+  "version": "1.0.0",
+  "main": "practise.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "chromedriver": "^129.0.2",
+    "selenium-webdriver": "^4.25.0"
+  }
+}
