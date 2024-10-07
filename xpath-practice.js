@@ -36,6 +36,7 @@ async function testRun()
 
     await driver.sleep(5000); // 3 Sec wait
     await driver.quit();
+    console.log("Change text")
 }
 
 testRun();
