@@ -11,7 +11,8 @@ async function testRun()
     await driver.get("https://demo.evershop.io/");
     //await driver.sleep(1000); // 1 Sec wait
     //await driver.findElement(By.className("search-icon")).click();  // By ClassName
-    await driver.findElement(By.xpath("//a[@class='search-icon']")).click();
+    await driver.findElement(By.css(".search-icon")).click();
+   // await driver.findElement(By.className("search-icon")).click();
     await driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys("nike");
     await driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys(Key.ENTER);
     await driver.findElement(By.xpath(`//a[contains(@href, '182')]/span[contains(text(),'${productName}')]`)).click();
@@ -20,8 +21,16 @@ async function testRun()
     await driver.findElement(By.xpath(`//a[@href="#" and contains(text(),"Black")]`)).click();
     await driver.sleep(2000);
    // await driver.findElement(By.xpath("//input [@name='qty']")).sendKeys(2);
-    await driver.findElement(By.xpath("//input [@name='qty']")).clear(); //CLear Previous Value
-    await driver.findElement(By.xpath("//input [@name='qty']")).sendKeys(2); 
+   // await driver.findElement(By.xpath("//input [@name='qty']")).clear(); //CLear Previous Value
+    await driver.findElement(By.css("input[name='qty']")).clear(); //CLear Previous Value
+  //  await driver.findElement(By.xpath("//input [@name='qty']")).sendKeys(2); 
+    await driver.findElement(By.css("input[name='qty']")).sendKeys(2); 
+
+  //  await driver.findElement(By.css("input[name='qty']")).clear();
+  //  await driver.findElement(By.css("input[name='qty']")).sendKeys(2);
+
+
+
     await driver.findElement(By.xpath("//button[contains(.,'ADD TO CART')]")).click();
    // await driver.findElement(By.xpath("//span[contains(text(),'ADD TO CART')]")).click(); // we can select by text
     await driver.sleep(2000); // Wait for View cart Action
